@@ -2,7 +2,7 @@ name: redis
 
 releases:
 - name: redis
-  version: "0.2"
+  version: "0.5"
 
 stemcells:
 - alias: default
@@ -21,6 +21,9 @@ instance_groups:
   jobs:
   - name: redis
     release: redis
+    properties:
+      redis:
+        cluster-enable: "no"
 
 update:
   canaries: 1
