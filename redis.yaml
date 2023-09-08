@@ -1,4 +1,4 @@
-name: redis
+name: redisnew
 
 releases:
 - name: redis
@@ -11,7 +11,7 @@ stemcells:
 
 instance_groups:
 - name: redis
-  instances: 1
+  instances: 6
   azs: [pas-az2]
   vm_type: small
   stemcell: default
@@ -23,7 +23,7 @@ instance_groups:
     release: redis
     properties:
       redis:
-        cluster-enable: "no"
+        cluster-enable: "yes"
 
 update:
   canaries: 1
